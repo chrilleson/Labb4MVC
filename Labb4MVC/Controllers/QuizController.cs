@@ -9,22 +9,22 @@ using Labb4MVC.Models;
 
 namespace Labb4MVC.Controllers
 {
-    public class QuizsController : Controller
+    public class QuizController : Controller
     {
         private readonly Labb4MVCContext _context;
 
-        public QuizsController(Labb4MVCContext context)
+        public QuizController(Labb4MVCContext context)
         {
             _context = context;
         }
 
-        // GET: Quizs
+        // GET: Quiz
         public async Task<IActionResult> Index()
         {
             return View(await _context.Quiz.ToListAsync());
         }
 
-        // GET: Quizs/Details/5
+        // GET: Quiz/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,18 +42,18 @@ namespace Labb4MVC.Controllers
             return View(quiz);
         }
 
-        // GET: Quizs/Create
+        // GET: Quiz/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Quizs/Create
+        // POST: Quiz/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Question,Alternativ")] Quiz quiz)
+        public async Task<IActionResult> Create([Bind("Id,Question,CorrectAnswer,Alternativ1,Alternativ2,Alternativ3,Alternativ4")] Quiz quiz)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace Labb4MVC.Controllers
             return View(quiz);
         }
 
-        // GET: Quizs/Edit/5
+        // GET: Quiz/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,12 +80,12 @@ namespace Labb4MVC.Controllers
             return View(quiz);
         }
 
-        // POST: Quizs/Edit/5
+        // POST: Quiz/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Question,Alternativ")] Quiz quiz)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Question,CorrectAnswer,Alternativ1,Alternativ2,Alternativ3,Alternativ4")] Quiz quiz)
         {
             if (id != quiz.Id)
             {
@@ -115,7 +115,7 @@ namespace Labb4MVC.Controllers
             return View(quiz);
         }
 
-        // GET: Quizs/Delete/5
+        // GET: Quiz/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace Labb4MVC.Controllers
             return View(quiz);
         }
 
-        // POST: Quizs/Delete/5
+        // POST: Quiz/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

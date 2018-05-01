@@ -11,9 +11,10 @@ using System;
 namespace Labb4MVC.Migrations
 {
     [DbContext(typeof(Labb4MVCContext))]
-    partial class Labb4MVCContextModelSnapshot : ModelSnapshot
+    [Migration("20180501123410_Added options to quiz")]
+    partial class Addedoptionstoquiz
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
