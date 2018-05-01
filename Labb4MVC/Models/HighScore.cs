@@ -7,6 +7,7 @@ namespace Labb4MVC.Models
 {
     public class HighScore
     {
+        public int Id { get; set; }
         public int Score { get; set; }
     }
 }

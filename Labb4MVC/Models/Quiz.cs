@@ -7,6 +7,7 @@ namespace Labb4MVC.Models
 {
     public class Quiz
     {
+        public int Id { get; set; }
         public string Question { get; set; }
         public string Alternativ { get; set; }
         public HighScore Score { get; set; }
