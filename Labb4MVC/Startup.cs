@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using Labb4MVC.Models;
+using Labb4MVC.Data;
 
 namespace Labb4MVC
 {
@@ -26,8 +28,12 @@ namespace Labb4MVC
         {
             services.AddMvc();
 
-            services.AddDbContext<Labb4MVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Labb4MVCContext")));
+            services.AddDbContext<Labb4MVCContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            //  adds application user to entity framework
+            services.AddIdentity<User, IdentityRole>()
+                  .AddEntityFrameworkStores<Labb4MVCContext>()
+                  .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +54,7 @@ namespace Labb4MVC
             }
 
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
