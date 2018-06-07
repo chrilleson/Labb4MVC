@@ -13,18 +13,7 @@ export class NavMenu extends React.Component<{}, {}> {
                         <span className='icon-bar'></span>
                     </button>
                     <Link className='navbar-brand' to={'/'}>Labb4MVC</Link>
-                    <ul>
-                        <li>
-                            <NavLink to={'/Labb4/Login'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Login
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/Labb4/Register'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Register
-                            </NavLink>
-                        </li>
-                    </ul>
+                   
                 </div>
                 <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
@@ -49,10 +38,14 @@ export class NavMenu extends React.Component<{}, {}> {
                                 <span className='glyphicon glyphicon-th-list'></span> Administrera Frågor
                             </NavLink>
                         </li>
-
                     </ul>
+                    <button className='btn btn-primary' onClick={this.logout}>Logga ut</button>
                 </div>
             </div>
         </div>;
+    }
+
+    logout() {
+        window.location.href = 'Account/Login';
     }
 }

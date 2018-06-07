@@ -1,8 +1,9 @@
+@model Labb4MVC.Models.User
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div id="react-app">Loading...</div>
+<div id="react-app">@ViewData["UserName"]</div>
 
 @section scripts {
     <script src="~/dist/main.js" asp-append-version="true"></script>
