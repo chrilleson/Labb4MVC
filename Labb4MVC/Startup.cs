@@ -28,7 +28,7 @@ namespace Labb4MVC
         {
             services.AddMvc();
 
-            services.AddDbContext<Labb4MVCContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<Labb4MVCContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Labb4MVCContext")));
 
             //  adds application user to entity framework
             services.AddIdentity<User, IdentityRole>()
