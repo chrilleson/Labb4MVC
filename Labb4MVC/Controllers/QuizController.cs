@@ -48,6 +48,77 @@ namespace Labb4MVC.Controllers
             return Ok(quiz);
         }
 
+        //Add a quiz with JSONresult
+        [HttpPost]
+        [Route("CreateQuiz")]
+        public IActionResult CreateQuiz(Quiz q)
+        {
+            if (q == null)
+            {
+                return BadRequest();
+            }
+
+            var quiz = new Quiz
+            {
+                Question = q.Question,
+                CorrectAnswer = q.CorrectAnswer,
+                Alternativ1 = q.Alternativ1,
+                Alternativ2 = q.Alternativ2,
+                Alternativ3 = q.Alternativ3,
+                Alternativ4 = q.Alternativ4,
+                Id = Guid.NewGuid()
+            };
+
+            if (!CheckCorrectAnswer(quiz))
+            {
+                return BadRequest();
+            }
+
+            _context.Quiz.Add(quiz);
+            _context.SaveChanges();
+
+            return Ok(quiz);
+
+        }
+
+        private bool QuizExists(Guid id)
+        {
+            return _context.Quiz.Any(e => e.Id == id);
+        }
+
+        private bool CheckCorrectAnswer(Quiz quiz)
+        {
+            var alternativ = new List<string>();
+            alternativ.Add((quiz.Alternativ1));
+            alternativ.Add((quiz.Alternativ2));
+            alternativ.Add((quiz.Alternativ3));
+            alternativ.Add((quiz.Alternativ4));
+
+            bool Result = false;
+
+            foreach (var item in alternativ)
+            {
+                if (quiz.CorrectAnswer.Equals(item))
+                {
+                    Result = true;
+                    break;
+                }
+            }
+
+            if (!Result)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /*
+         * 
+         * 
+         * 
+         * 
+
         // PUT: api/Quizs/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuiz([FromRoute] Guid id, [FromBody] Quiz quiz)
@@ -119,11 +190,6 @@ namespace Labb4MVC.Controllers
             return Ok(quiz);
         }
 
-        /*
-         * 
-         * 
-         * 
-         * 
         // POST: Quizs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -223,9 +289,6 @@ namespace Labb4MVC.Controllers
         *
         *     
         */
-        private bool QuizExists(Guid id)
-        {
-            return _context.Quiz.Any(e => e.Id == id);
-        }
+
     }
 }
