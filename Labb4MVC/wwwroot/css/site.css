@@ -24,6 +24,43 @@
     margin-top: 10%;
 }
 
+#create-fraga {
+    margin-top: 20px;
+    margin-left: 37px;
+    margin-bottom: 10px;
+}
+
+#create-fraga-alternativ-1{
+    margin-bottom: 10px;
+}
+
+#create-fraga-alternativ-2 {
+    margin-bottom: 10px;
+}
+
+#create-fraga-alternativ-3 {
+    margin-bottom: 10px;
+}
+
+#create-fraga-alternativ-4 {
+    margin-bottom: 10px;
+}
+
+#create-fraga-correct-answer {
+    margin-left: 16px;
+    margin-bottom: 0px;
+}
+
+#create-fraga-button {
+    margin-top: 10px;
+    margin-left: 120px;
+}
+
+#create-fraga-button button {
+    width: 100px;
+    height: 30px;
+}
+
 .main-nav li .glyphicon {
     margin-right: 10px;
 }
