@@ -35,10 +35,10 @@ namespace Labb4MVC.Data
             context.SaveChanges();
 
             var scores = new HighScore[] {
-                new HighScore {Id = Guid.NewGuid(), User = "AAA", DateTime = DateTime.Now, Score = 4},
-                new HighScore{Id = Guid.NewGuid(), User = "BBB", DateTime= DateTime.Now, Score= 5},
-                new HighScore{Id = Guid.NewGuid(), User = "CCC", DateTime= DateTime.Now, Score = 0},
-                new HighScore {Id = Guid.NewGuid(), User = "DDD", DateTime = DateTime.Now, Score = 1},
+                new HighScore {Id = Guid.NewGuid(), User = "AAA", Date = DateTime.Now, Score = 4},
+                new HighScore{Id = Guid.NewGuid(), User = "BBB", Date= DateTime.Now, Score= 5},
+                new HighScore{Id = Guid.NewGuid(), User = "CCC", Date= DateTime.Now, Score = 0},
+                new HighScore {Id = Guid.NewGuid(), User = "DDD", Date = DateTime.Now, Score = 1},
             };
 
             foreach(HighScore s in scores)

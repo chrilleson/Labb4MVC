@@ -60,7 +60,7 @@ namespace Labb4MVC.Controllers
             var score = new HighScore
             {
                 Id = Guid.NewGuid(),
-                DateTime = DateTime.Now,
+                Date = DateTime.Now,
                 Score = result,
                 User = user
             };

@@ -19,6 +19,6 @@ namespace Labb4MVC.Models
         public string User { get; set; }
 
         [Required]
-        public DateTime DateTime { get; set; }
+        public DateTime Date { get; set; }
     }
 }
