@@ -65,7 +65,7 @@ namespace Labb4MVC.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("Home/Index");
+                    return Redirect("ClientApp/components/Home");
                 }
                 else
                 {

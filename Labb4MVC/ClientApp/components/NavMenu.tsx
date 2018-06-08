@@ -13,11 +13,18 @@ export class NavMenu extends React.Component<{}, {}> {
                         <span className='icon-bar'></span>
                     </button>
                     <Link className='navbar-brand' to={'/'}>Labb4MVC</Link>
-                   
+
                 </div>
                 <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
+                        <li>
+                            <a href="http://localhost:49540/Account/Login"> Login </a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:49540/Account/Register"> Register </a>
+                        </li>
+                        <br />
                         <li>
                             <NavLink to={'/Labb4/quiz'} exact activeClassName='active'>
                                 <span className='glyphicon glyphicon-home'></span> Quiz
@@ -35,7 +42,7 @@ export class NavMenu extends React.Component<{}, {}> {
                         </li>
                         <li>
                             <NavLink to={'/Labb4/AdminQuestions'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Administrera Frågor
+                                <span className='glyphicon glyphicon-th-list'></span> Administrera Fr&#229;gor
                             </NavLink>
                         </li>
                     </ul>

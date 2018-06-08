@@ -70,7 +70,7 @@ export class ShowQuiz extends React.Component<ShowQuizProps, ShowQuizState>{
             return (
                 <div>
                     <h2>{quiz[questionNumber].question}</h2>
-
+                    <div id="qas">
                     <div className="row">
                         <div>
                             <label>
@@ -113,18 +113,24 @@ export class ShowQuiz extends React.Component<ShowQuizProps, ShowQuizState>{
                                 {quiz[questionNumber].alternativ4}
                             </label>
                         </div>
-                    </div>
+                        </div>
+                        </div>
 
+                    <div id="quiz-button-1">
                     <button className="btn btn-primary"
                         onClick={this.submitAnswer}
                         disabled={this.state.submitBtnDisable}>
                         Skicka svar
                     </button>
+                    </div>
+
+                    <div id="quiz-button-1">
                     <button className="btn btn-primary"
                         onClick={this.getNextQuestion}
                         disabled={this.state.nextQuestionBtnDisable}>
                         Nästa fråga
                     </button>
+                    </div>
 
                     <div>
                         <h4>{this.state.result}</h4>
