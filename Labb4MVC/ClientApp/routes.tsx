@@ -2,19 +2,17 @@ import * as React from 'react';
 import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
 import { Quiz } from './components/Labb4/Quiz';
-import { AdminQuestions } from './components/Labb4/AdminQuestions';
+import { CreateQuestion } from './components/Labb4/CreateQuestion';
+import { ShowHighScores } from './components/Labb4/ShowHighScores';
 
 
 
 export const routes = <Layout>
     <Route exact path='/' component={Home} />
-    <Route path='/counter' component={Counter} />
-    <Route path='/fetchdata' component={FetchData} />
+    <Route path='/Labb4/ShowHighScores' component={ShowHighScores} />
     <Route path='/Labb4/quiz' component={Quiz} />
-    <Route path='/Labb4/AdminQuestions' component={AdminQuestions} />
+    <Route path='/Labb4/CreateQuestion' component={CreateQuestion} />
 
 
 </Layout>;
