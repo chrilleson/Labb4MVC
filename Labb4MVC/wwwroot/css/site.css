@@ -18,6 +18,10 @@
     margin-bottom: 5px;
 }
 
+#quiz-answer-info {
+    margin-left: 0px;
+}
+
 .notbootstrap-wrapper {
     width: 50%;
     margin: auto;
@@ -59,6 +63,10 @@
 #create-fraga-button button {
     width: 100px;
     height: 30px;
+}
+
+#navmenu-loggout-button {
+    margin-left: 20px;
 }
 
 .main-nav li .glyphicon {

@@ -132,8 +132,12 @@ export class ShowQuiz extends React.Component<ShowQuizProps, ShowQuizState>{
                     </button>
                     </div>
 
-                    <div>
-                        <h4>{this.state.result}</h4>
+                    <br />
+                    <br />
+                    <br />
+
+                    <div id="quiz-answer-info">
+                        <h2>{this.state.result}</h2>
                     </div>
                 </div>
             )

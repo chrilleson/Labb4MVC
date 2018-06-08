@@ -34,7 +34,9 @@ export class NavMenu extends React.Component<{}, {}> {
                             </NavLink>
                         </li>
                     </ul>
-                    <button className='btn btn-primary' onClick={this.logout}>Logga ut</button>
+                    <div id="navmenu-loggout-button">
+                        <button className='btn btn-primary' onClick={this.logout}>Logga ut</button>
+                    </div>
                 </div>
             </div>
         </div>;
