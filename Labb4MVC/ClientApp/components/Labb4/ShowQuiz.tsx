@@ -132,6 +132,15 @@ export class ShowQuiz extends React.Component<ShowQuizProps, ShowQuizState>{
                 </div>
             )
         }
+        else {
+            return (
+                <div>
+                    {this.submitScore()}
+                    <h2>Bra jobbat!</h2>
+                    <h2>Du fick {this.state.scoreState} / {this.state.quiz.length} poäng!</h2>
+                </div>
+                )
+        }
     }
 
     public getNextQuestion() {
